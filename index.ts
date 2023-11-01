@@ -6,8 +6,7 @@ const SLEEP = 1000 / FPS;
 interface Tile {
   isAir(): boolean;
   isFlux(): boolean;
-  isUnbreakable(): boolean;
-  isPlayer(): boolean;
+  // isPlayer(): boolean;
   isStone(): boolean;
   isFallingStone(): boolean;
   isBox(): boolean;
@@ -28,12 +27,6 @@ class Air implements Tile {
     return true;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
@@ -83,12 +76,6 @@ class Flux implements Tile {
   }
   isFlux() {
     return true;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
-    return false;
   }
   isStone() {
     return false;
@@ -143,12 +130,6 @@ class Unbreakable implements Tile {
   isFlux() {
     return false;
   }
-  isUnbreakable() {
-    return true;
-  }
-  isPlayer() {
-    return false;
-  }
   isStone() {
     return false;
   }
@@ -201,12 +182,6 @@ class Player implements Tile {
   isFlux() {
     return false;
   }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
-    return true;
-  }
   isStone() {
     return false;
   }
@@ -253,12 +228,6 @@ class Stone implements Tile {
     return false;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
@@ -319,12 +288,6 @@ class FallingStone implements Tile {
   isFlux() {
     return false;
   }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
-    return false;
-  }
   isStone() {
     return false;
   }
@@ -376,12 +339,6 @@ class Box implements Tile {
     return false;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
@@ -442,12 +399,6 @@ class FallingBox implements Tile {
   isFlux() {
     return false;
   }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
-    return false;
-  }
   isStone() {
     return false;
   }
@@ -498,12 +449,6 @@ class Key1 implements Tile {
     return false;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
@@ -558,12 +503,6 @@ class Key2 implements Tile {
     return false;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
@@ -621,12 +560,6 @@ class Lock1 implements Tile {
   isFlux() {
     return false;
   }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
-    return false;
-  }
   isStone() {
     return false;
   }
@@ -678,12 +611,6 @@ class Lock2 implements Tile {
     return false;
   }
   isFlux() {
-    return false;
-  }
-  isUnbreakable() {
-    return false;
-  }
-  isPlayer() {
     return false;
   }
   isStone() {
