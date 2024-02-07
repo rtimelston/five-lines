@@ -638,11 +638,7 @@ const YELLOW_KEY_2 = new KeyConfiguration("#ffcc00",
 class Map {
   private map: Tile[][];
 
-  getMap(): Tile[][] {
-    return this.map;
-  }
-
-  transform() {
+  constructor() {
     this.map = new Array(rawMap.length);
     for (let y = 0; y < rawMap.length; y++) {
       this.map[y] = new Array(rawMap[y].length);
@@ -651,6 +647,10 @@ class Map {
       }
     }
     return this;
+  }
+
+  getMap(): Tile[][] {
+    return this.map;
   }
 
   update() {
@@ -756,9 +756,7 @@ function gameLoop(map: Map) {
 }
 
 window.onload = () => {
-  var map = new Map();
-  map.transform();
-  gameLoop(map);
+  gameLoop(new Map());
 }
 
 const LEFT_KEY = "ArrowLeft";
